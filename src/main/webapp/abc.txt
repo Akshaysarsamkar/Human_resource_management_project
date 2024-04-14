@@ -1,0 +1,18 @@
+<-- create Employees table -->
+
+create table Employee (EmpId int primary key  AUTO_INCREMENT,FirstName varchar(40),LastName varchar(40),Email varchar(30),Mobile varchar(12),
+Gender varchar(8),BankName varchar(40),AccountNo varchar(40),Language varchar(30),Department varchar(20),
+Emergency varchar(40),salary int,img blob);
+
+
+
+ create table admin(aid int primary key AUTO_INCREMENT,uname varchar(50),password varchar(40),email varchar(50));
+ 
+create table recrument(rid int primary key AUTO_INCREMENT,Fname varchar(50),lname varchar(40),position varchar(50),email varchar(40),phone varchar(12));
+
+create table Department(did int primary key AUTO_INCREMENT,dnAME VARCHAR(40),History VARCHAR(70));
+
+
+create table Attendence(date varchar(50),staffer VARCHAR(40),status VARCHAR(70),intime time,outtime time);
+
+create table Leaves(sdate varchar(40),edate varchar(40),leavetype varchar(40),decs varchar(100));
