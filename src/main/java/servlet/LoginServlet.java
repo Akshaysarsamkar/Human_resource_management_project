@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import conn.DBConn;
 import dio.AdminDia;
 import entity.Admin;
+import entity.Massage;
 import jakarta.servlet.http.HttpSession;
 
 /**
@@ -30,7 +31,10 @@ System.out.println(uname +" "+pass);
 
 			if (data == null) {
       
-				System.out.println("not login.......");
+				  Massage m = new Massage("Please Enter valid Username & Password","alert-danger");
+				     HttpSession s = request.getSession();
+				     s.setAttribute("invalidmsg", m);
+				     response.sendRedirect("Login.jsp");
 				
 				
 			} else {	

@@ -58,7 +58,7 @@
 
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">
-							Phone No</label> <input type="file" class="form-control"
+							Profile Photo</label> <input type="file" class="form-control"
 							id="exampleInputtext" name="img">
 					</div>
 

@@ -5,6 +5,7 @@ import java.io.IOException;
 import conn.DBConn;
 import dio.EmpDio;
 import entity.Emp;
+import entity.Massage;
 import jakarta.servlet.http.HttpSession;
 
 
@@ -29,8 +30,12 @@ public class EmpLogin extends jakarta.servlet.http.HttpServlet {
 			System.out.println(data);
 			
 			if(data == null) {
-				System.out.println("Not login.........");
-			}else {
+			     Massage m = new Massage("Please Enter valid Username & Password","alert-danger");
+			     HttpSession s = request.getSession();
+			     s.setAttribute("invalidmsg", m);
+			     response.sendRedirect("EmpLogin.jsp");
+			     
+			     }else {
 				System.out.println("login.....");
 				HttpSession s = request.getSession();
 				s.setAttribute("empinfo",data);

@@ -75,7 +75,7 @@ Emp e = (Emp) request.getSession().getAttribute("empdata");
 							aria-expanded="false"> <img src="https://github.com/mdo.png	"
 							alt="hugenerd" width="70" height="70" class="rounded-circle">
 						</a>
-						<h4>Akshay Sarsamkar</h4>
+						<h4><%=e.getFirstName()%></h4>
 
 					</div>
 

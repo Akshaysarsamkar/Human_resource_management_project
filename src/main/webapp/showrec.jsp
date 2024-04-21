@@ -94,11 +94,11 @@
 
 						<tbody>
 							<tr>
-								<th scope="row"><%= id %></th>
-								<td><%= fname %></td>
+								<td scope="row"><%=fname%></td>
 								<td><%= lname %></td>
-								<td><%= position %></td>
+								<td><%= phone %></td>
 								<td><%= email %></td>
+								<td><%= position %></td>
 								<td>
 									<a type="button" class="btn btn-danger" href="delete.jsp?rid=<%=id%>">Delete</a>
 								</td>

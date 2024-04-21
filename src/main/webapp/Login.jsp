@@ -1,4 +1,5 @@
 
+<%@page import="entity.Massage"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -33,18 +34,34 @@
 
 	<div class="p-5 container mt-5 ">
 
-		<form class="card  border-0" style="align-items: center;" action="LoginServlet" method="post">
+		<form class="card  border-0" style="align-items: center;"
+			action="LoginServlet" method="post">
 
 			<div class="card-body col-md-6">
-			<p class="text-center">.
-				<i class="fa fa-universal-access" style="font-size:98px;color:skyblue"></i>
+				<p class="text-center">
+					. <i class="fa fa-universal-access"
+						style="font-size: 98px; color: skyblue"></i>
 				</p>
 				<h1 class="text-center display-6 ">Administrator Sign in Portal</h1>
 				<div class="border border-black p-3 bg-light">
 
+
+					<%
+					Massage a = (Massage) request.getSession().getAttribute("invalidmsg");
+
+					if (a != null) {
+					%>
+					<div class="alert alert-danger container-fluid" role="alert"><%=a.getMsg()%></div>
+
+					<%
+					session.removeAttribute("invalidmsg");
+					}
+					%>
+
+
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">
-						UserName</label> <input name="uname" type="text" class="form-control"
+							UserName</label> <input name="uname" type="text" class="form-control"
 							id="exampleInputtext" required>
 					</div>
 					<div class="mb-3">
@@ -52,11 +69,15 @@
 							Password</label> <input name="pass" type="pass" class="form-control"
 							id="exampleInputtext" required>
 					</div>
-					
-					
+
+
 					<div class="text-center">
-					   <p>Not a Member ? <a href="Signup.jsp" >Create new Account</a></p>
-					   <p>Employees ? <a href="EmpLogin.jsp">Login</a></p>
+						<p>
+							Not a Member ? <a href="Signup.jsp">Create new Account</a>
+						</p>
+						<p>
+							Employees ? <a href="EmpLogin.jsp">Login</a>
+						</p>
 					</div>
 
 					<div class="d-grid gap-2">

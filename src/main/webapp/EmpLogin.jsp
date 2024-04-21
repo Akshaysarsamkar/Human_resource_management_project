@@ -1,3 +1,4 @@
+<%@page import="entity.Massage"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -37,6 +38,18 @@
 				</p>
 				<h1 class="text-center display-6">Employees Sign in Portal</h1>
 				<div class="border border-black p-3 bg-light">
+				
+					<%
+					Massage a = (Massage) request.getSession().getAttribute("invalidmsg");
+
+					if (a != null) {
+					%>
+					<div class="alert alert-danger container-fluid" role="alert"><%=a.getMsg()%></div>
+
+					<%
+					session.removeAttribute("invalidmsg");
+					}
+					%>
 
 					<div class="mb-3">
 						<label for="exampleInputPassword1" class="form-label">
